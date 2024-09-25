@@ -27,7 +27,7 @@
 			<artifactId>framework</artifactId>
 			<scope>system</scope>
 			<version>1.0</version>
-			<systemPath>${basedir}/bin/ACoE_SeleniumHybridFramework_Bootcamp.jar</systemPath>
+			<systemPath>${basedir}/bin/ACOE_SeleniumHybridFramework_Bootcamp.jar</systemPath>
 		</dependency>
 
 		<dependency>
