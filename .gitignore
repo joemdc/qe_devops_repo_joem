@@ -1,0 +1,8 @@
+# Maven
+target/
+dist/
+
+# Test reports
+**/*.html
+**/test-output
+**/reports
