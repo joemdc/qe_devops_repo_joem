@@ -1,6 +1,9 @@
 package finalexam;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
+import org.testng.ITestContext;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -14,6 +17,7 @@ import auto.framework.web.RadioButton;
 import auto.framework.web.TextBox;
 import auto.framework.web.WebControl;
 import common.TestDataHandler2;
+import common.WebDriverHandler;
 
 public class VIA_AutomobileValidInput extends TestBase {
 
@@ -28,14 +32,22 @@ public class VIA_AutomobileValidInput extends TestBase {
 	
 	private TestDataHandler2 testData;
 	
+	@Override
 	@BeforeTest
-	public void beforeTest() throws Exception {
-		testData = TestDataHandler2.loadTestData("Sheet1", "Row='VIA_AutomobileValidInput'");
-		WebControl.open(testData.URL);
+	public void startTest(ITestContext context) throws IOException {
+		WebDriverHandler.startTestMethod(context);
 	}
+
+	// @BeforeTest
+	// public void beforeTest() throws Exception {
+	// 	testData = TestDataHandler2.loadTestData("Sheet1", "Row='VIA_AutomobileValidInput'");
+	// 	WebControl.open(testData.URL);
+	// }
 	
 	@Test
-	public void validateInputInSpecialFields() throws InterruptedException {
+	public void validateInputInSpecialFields() throws Exception {
+		testData = TestDataHandler2.loadTestData("Sheet1", "Row='VIA_AutomobileValidInput'");
+		WebControl.open(testData.URL);
 		ReportLog.setTestName("Vehicle Insurance Application");
 		ReportLog.setTestCase("Automobile Insurance Quotation");
 		
